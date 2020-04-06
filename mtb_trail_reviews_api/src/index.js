@@ -3,6 +3,13 @@ const { GraphQLServer } = require('graphql-yoga')
 const typeDefs = `
 type Query {
   info: String!
+  feed: [Review!]!
+}
+
+type Review {
+  id: ID!
+  trailName: String!
+  trailCondition: String!
 }
 `
 
