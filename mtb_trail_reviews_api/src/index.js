@@ -13,9 +13,22 @@ type Review {
 }
 `
 
+let reviews = [{
+  id: 'review-1',
+  trailName: "Hoyt Park",
+  trailCondition: "Muddy in the low spots. Badly in need of sun"
+}]
+
 const resolvers = {
   Query: {
-    info: () => 'Trail condition reviews'
+    info: () => 'Trail condition reviews',
+    feed: () => reviews,
+  },
+
+  Review: {
+    id: (parent) => parent.id,
+    trailName: (parent) => parent.trailName,
+    trailCondition: (parent) => parent.trailCondition,
   }
 }
 
