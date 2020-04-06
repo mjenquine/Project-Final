@@ -1,0 +1,15 @@
+type Review {
+  id: ID! @id
+  createdAt: DateTime! @createdAt
+  trailName: String!
+  trailCondition: String!
+  postedBy: User
+}
+
+type User {
+  id: ID! @id
+  name: String!
+  email: String! @unique
+  password: String!
+  reviews: [Review!]!
+}

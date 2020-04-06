@@ -1,0 +1,14 @@
+type Query {
+  info: String!
+  feed: [Review!]!
+}
+
+type Mutation {
+  post(trailName: String!, trailCondition: String!): Review
+}
+
+type Review {
+  id: ID!
+  trailName: String!
+  trailCondition: String!
+}
