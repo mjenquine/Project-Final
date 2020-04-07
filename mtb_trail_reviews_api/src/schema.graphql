@@ -9,6 +9,10 @@ type Mutation {
   login(email: String!, password: String!): AuthPayload
 }
 
+type Subscription {
+  newReview: Review
+}
+
 type Review {
   id: ID!
   trailName: String!

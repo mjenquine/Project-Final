@@ -4,7 +4,7 @@ const { APP_SECRET, getUserId } = require('../utils')
 
 function post(parent, args, context, info) {
   const userId = getUserId(context)
-  return context.prisma.createLink({
+  return context.prisma.createReview({
     trailName: args.trailName,
     trailCondition: args.trailCondition,
     postedBy: { connect: { id: userId }},
@@ -14,7 +14,7 @@ function post(parent, args, context, info) {
 async function signup(parents, args, context, info) {
   const password = await bcrypt.hash(args.password, 10)
   const user = await context.prisma.createUser({ ...args, password })
-  const token = jwt.sign({ user.Id: user.id }, APP_SECRET)
+  const token = jwt.sign({ userId: user.id }, APP_SECRET)
 
   return {
     token,
