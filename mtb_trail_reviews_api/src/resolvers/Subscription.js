@@ -1,5 +1,5 @@
 function newReviewSubscribe(parent, args, context, info) {
-  return context.prisma.$subscribe.review({ mutation_in: ['Created']}).node()
+  return context.prisma.$subscribe.review({ mutation_in: ['CREATED'] }).node()
 }
 
 const newReview = {

@@ -10,8 +10,9 @@ const Subscription = require('./resolvers/Subscription')
 const resolvers = {
   Query,
   Mutation,
+  Subscription,
   User,
-  Review
+  Review,
 }
 
 const server = new GraphQLServer({
